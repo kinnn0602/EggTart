@@ -9,12 +9,17 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
       color: #ffffff;
       text-align: center;
+      background: url('https://images.unsplash.com/photo-1600255826680-0b638a4c9c53?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 60px 20px;
     }
     .container {
-      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
@@ -48,27 +53,30 @@
     footer {
       margin-top: 60px;
       font-size: 0.9rem;
-      color: #aaaaaa;
+      color: #cccccc;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎮 발로란트 디스코드 서버</h1>
-    <p>환영합니다! 다양한 정보는 아래 버튼을 통해 확인하세요 👇</p>
+  <div class="overlay">
+    <div class="container">
+      <h1>🎮 발로란트 디스코드 서버</h1>
+      <p>환영합니다! 다양한 정보는 아래 버튼을 통해 확인하세요 👇</p>
 
-    <div class="button-grid">
-      <a class="button" href="notice.html">📢 공지사항</a>
-      <a class="button" href="event.html">📅 이벤트</a>
-      <a class="button" href="https://discord.gg/yourserver" target="_blank">🔗 디스코드 서버</a>
-      <a class="button" href="staff.html">👥 운영진 목록</a>
-      <a class="button" href="rules.html">📜 서버 규칙</a>
+      <div class="button-grid">
+        <a class="button" href="notice.html">📢 공지사항</a>
+        <a class="button" href="event.html">📅 이벤트</a>
+        <a class="button" href="https://discord.gg/yourserver" target="_blank">🔗 디스코드 서버</a>
+        <a class="button" href="staff.html">👥 운영진 목록</a>
+        <a class="button" href="rules.html">📜 서버 규칙</a>
+      </div>
+
+      <footer>
+        <p>© 2025 발로란트 커뮤니티 서버</p>
+        <p>Powered by <a href="https://gptonline.ai/ko/" target="_blank" style="color: #ffffff;">GPT Online</a></p>
+      </footer>
     </div>
-
-    <footer>
-      <p>© 2025 발로란트 커뮤니티 서버</p>
-      <p>Powered by <a href="https://gptonline.ai/ko/" target="_blank" style="color: #ffffff;">GPT Online</a></p>
-    </footer>
   </div>
 </body>
 </html>
+

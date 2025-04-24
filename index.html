@@ -26,10 +26,25 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
 
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fef08a;
+      text-decoration: none;
+    }
+
     .nav-menu {
       list-style: none;
       display: flex;
-      justify-content: center;
       gap: 40px;
       margin: 0;
       padding: 15px 0;
@@ -163,39 +178,42 @@
 <body>
 
   <header class="nav-bar">
-    <nav>
-      <ul class="nav-menu">
-        <li tabindex="0">
-          주요사항
-          <ul class="dropdown">
-            <li><a href="notice.html">📢 공지사항</a></li>
-            <li><a href="rules.html">📜 서버 규칙</a></li>
-          </ul>
-        </li>
-        <li tabindex="0">
-          서버
-          <ul class="dropdown">
-            <li><a href="about.html">🔍 서버 소개</a></li>
-            <li><a href="staff.html">👥 운영진</a></li>
-          </ul>
-        </li>
-        <li tabindex="0">
-          이벤트
-          <ul class="dropdown">
-            <li><a href="apply.html">📝 정규 내전 신청</a></li>
-            <li><a href="event.html">📅 일정</a></li>
-          </ul>
-        </li>
-        <li tabindex="0">
-          소식
-          <ul class="dropdown">
-            <li><a href="contact.html">💬 문의</a></li>
-            <li><a href="gallery.html">🖼️ 사진방</a></li>
-          </ul>
-        </li>
-        <li><a href="https://discord.gg/yourserver" target="_blank">디스코드</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo-text">🥚 에그타르트</a>
+      <nav>
+        <ul class="nav-menu">
+          <li tabindex="0">
+            주요사항
+            <ul class="dropdown">
+              <li><a href="notice.html">📢 공지사항</a></li>
+              <li><a href="rules.html">📜 서버 규칙</a></li>
+            </ul>
+          </li>
+          <li tabindex="0">
+            서버
+            <ul class="dropdown">
+              <li><a href="about.html">🔍 서버 소개</a></li>
+              <li><a href="staff.html">👥 운영진</a></li>
+            </ul>
+          </li>
+          <li tabindex="0">
+            이벤트
+            <ul class="dropdown">
+              <li><a href="apply.html">📝 정규 내전 신청</a></li>
+              <li><a href="event.html">📅 일정</a></li>
+            </ul>
+          </li>
+          <li tabindex="0">
+            소식
+            <ul class="dropdown">
+              <li><a href="contact.html">💬 문의</a></li>
+              <li><a href="gallery.html">🖼️ 사진방</a></li>
+            </ul>
+          </li>
+          <li><a href="https://discord.gg/yourserver" target="_blank">디스코드</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- 파동 배경 -->

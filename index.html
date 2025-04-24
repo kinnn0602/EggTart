@@ -557,6 +557,53 @@
     </div>
   </div>
 
+  <!-- 왼쪽 고정 광고 배너 (신규 이모지 홍보) -->
+<a href="https://discord.gg/yourserver" target="_blank" style="text-decoration: none;">
+  <div id="emojiBanner" style="
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(145deg, #1f2937, #111827);
+    color: white;
+    width: 280px;
+    padding: 20px 20px 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  ">
+    <!-- 닫기 버튼 -->
+    <button type="button" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('emojiBanner').style.display='none'" style="
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: bold;
+    ">✕</button>
+
+    <!-- 이미지 -->
+    <img src="https://i.namu.wiki/i/zkey2H6ka0WwWS7C210XdqA5pQ_4oaPrYIfyLZFbvwhVaVgi56czAsx1yrG0Jt2WhKKh6hrOZ4JEVE2stG7cxg.webp" 
+         alt="이모지 홍보" 
+         style="width: 100px; border-radius: 12px; margin-bottom: 15px;">
+
+    <!-- 내용 -->
+    <h3 style="margin: 0 0 10px; font-size: 1.2rem;">✨ 신규 이모지 22종 추가!</h3>
+    <p style="font-size: 0.95rem; color: #fef08a;">디스코드에서 확인해보세요 ➜</p>
+  </div>
+</a>
+  
+    
   <!-- 하단 법적 정보 바 -->
   <div class="legal-bar">
     <p>에그타르트 공식 홈페이지입니다.</p>

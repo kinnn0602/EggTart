@@ -213,6 +213,11 @@
       transition: transform 0.3s;
     }
 
+    
+    .floating-banner:hover img {
+      transform: translateY(-3px);
+    }
+
     .floating-banner span {
       font-size: 0.9rem;
       line-height: 1.3;
@@ -246,7 +251,6 @@
       window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
         banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.15}px)`;
-        image.style.transform = `translateY(${(currentScroll - lastScrollY) * 0.05}px)`;
       });
 
       document.getElementById('closeBanner').addEventListener('click', () => {

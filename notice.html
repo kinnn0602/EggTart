@@ -242,6 +242,37 @@
       display: none;
     }
   </style>
+
+  <!-- 왼쪽 고정 신규 이모지 광고 배너 -->
+<div style="
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(145deg, #1f2937, #111827);
+  color: white;
+  width: 280px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+"
+  onclick="location.href='notice.html'"
+  onmouseover="this.style.transform='translateY(-50%) scale(1.03)'"
+  onmouseout="this.style.transform='translateY(-50%)'"
+>
+  <img src="https://i.namu.wiki/i/zkey2H6ka0WwWS7C210XdqA5pQ_4oaPrYIfyLZFbvwhVaVgi56czAsx1yrG0Jt2WhKKh6hrOZ4JEVE2stG7cxg.webp" alt="이모지 홍보" style="width: 100px; border-radius: 12px; margin-bottom: 15px;">
+  <h3 style="margin: 0 0 10px; font-size: 1.2rem;">✨ 신규 이모지 22종 추가!</h3>
+  <p style="font-size: 0.95rem; color: #fef08a;">지금 디스코드에서 확인해보세요 ➜</p>
+</div>
+
+  
   <script>
     // 페이지 로드 후 실행: 광고 배너 효과, 스크롤에 반응
     window.addEventListener('DOMContentLoaded', () => {
@@ -322,35 +353,6 @@
     </div>
   </div>
 
-    <!-- 왼쪽 고정 신규 이모지 광고 배너 -->
-<div style="
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(145deg, #1f2937, #111827);
-  color: white;
-  width: 280px;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-"
-  onclick="location.href='notice.html'"
-  onmouseover="this.style.transform='translateY(-50%) scale(1.03)'"
-  onmouseout="this.style.transform='translateY(-50%)'"
->
-  <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDEwMTlfMjcx/MDAxNjAzMDk0NTgwMTQ2.PtkNrVHNSTLDaRVSYvR1S7LaMMOOTmciAN-jLeZxCjkg.5A9XlNXFtnoNldIemlXODurmiCOPw2FGYE90bnzCC-0g.JPEG.kyeongmin1362/IMG_4612.JPG?type=w800" alt="이모지 홍보" style="width: 100px; border-radius: 12px; margin-bottom: 15px;">
-  <h3 style="margin: 0 0 10px; font-size: 1.2rem;">✨ 신규 이모지 22종 추가!</h3>
-  <p style="font-size: 0.95rem; color: #fef08a;">지금 디스코드에서 확인해보세요 ➜</p>
-</div>
-    
   <!-- 하단 법적 정보 바 -->
   <div class="legal-bar">
     <p>에그타르트 공식 홈페이지입니다.</p>

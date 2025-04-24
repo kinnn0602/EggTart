@@ -51,7 +51,8 @@
     .dropdown {
       position: absolute;
       top: 100%;
-      left: 0;
+      left: 50%;
+      transform: translate(-50%, -10px);
       background-color: #222;
       border-radius: 8px;
       padding: 0;
@@ -59,7 +60,6 @@
       z-index: 1000;
       min-width: 160px;
       opacity: 0;
-      transform: translateY(-10px);
       pointer-events: none;
       transition: all 0.3s ease;
     }
@@ -76,7 +76,7 @@
     .nav-menu > li:hover > .dropdown,
     .nav-menu > li:focus-within > .dropdown {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, 0);
       pointer-events: auto;
       padding: 10px 0;
     }
@@ -223,9 +223,6 @@
     <p>오너 이메일: <a href="mailto:yunseokim0602@naver.com">yunseokim0602@naver.com</a></p>
     <p>홈페이지 제작자: KIMI</p>
   </div>
-
-</body>
-</html>
 
 </body>
 </html>

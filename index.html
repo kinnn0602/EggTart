@@ -70,7 +70,44 @@
     .floating-banner.hidden {
       display: none;
     }
-  </style>
+  .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 140px 20px 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    .legal-bar {
+      background-color: #1c1c1c;
+      color: #aaaaaa;
+      font-size: 0.9rem;
+      padding: 20px 0;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .legal-bar a {
+      color: #aaaaaa;
+      text-decoration: none;
+    }
+
+    .legal-bar a:hover {
+      text-decoration: underline;
+    }
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const banner = document.querySelector('.floating-banner');
@@ -238,4 +275,3 @@
   </div>
 </body>
 </html>
-

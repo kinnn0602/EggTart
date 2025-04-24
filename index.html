@@ -557,9 +557,8 @@
     </div>
   </div>
 
-  <!-- 왼쪽 고정 광고 배너 (신규 이모지 홍보) -->
-<a href="https://discord.gg/yourserver" target="_blank" style="text-decoration: none;">
-  <div id="emojiBanner" style="
+  <style>
+  .emoji-banner {
     position: fixed;
     left: 20px;
     top: 50%;
@@ -576,32 +575,48 @@
     align-items: center;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-  ">
-    <!-- 닫기 버튼 -->
-    <button type="button" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('emojiBanner').style.display='none'" style="
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      font-weight: bold;
-    ">✕</button>
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-    <!-- 이미지 -->
-    <img src="https://i.namu.wiki/i/zkey2H6ka0WwWS7C210XdqA5pQ_4oaPrYIfyLZFbvwhVaVgi56czAsx1yrG0Jt2WhKKh6hrOZ4JEVE2stG7cxg.webp" 
-         alt="이모지 홍보" 
-         style="width: 100px; border-radius: 12px; margin-bottom: 15px;">
+  .emoji-banner:hover {
+    transform: translateY(-50%) scale(1.03);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.3);
+  }
 
-    <!-- 내용 -->
+  .emoji-banner:active {
+    transform: translateY(-50%) scale(0.98);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .emoji-banner img {
+    width: 100px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .emoji-banner button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+
+<!-- 광고 배너 HTML -->
+<a href="https://discord.gg/sQSKmPSxGv" target="_blank" style="text-decoration: none;">
+  <div class="emoji-banner" id="emojiBanner">
+    <button type="button" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('emojiBanner').style.display='none'">✕</button>
+    <img src=https://i.namu.wiki/i/zkey2H6ka0WwWS7C210XdqA5pQ_4oaPrYIfyLZFbvwhVaVgi56czAsx1yrG0Jt2WhKKh6hrOZ4JEVE2stG7cxg.webp" alt="이모지 홍보">
     <h3 style="margin: 0 0 10px; font-size: 1.2rem;">✨ 신규 이모지 22종 추가!</h3>
     <p style="font-size: 0.95rem; color: #fef08a;">디스코드에서 확인해보세요 ➜</p>
   </div>
 </a>
+
   
     
   <!-- 하단 법적 정보 바 -->

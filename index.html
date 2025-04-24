@@ -250,7 +250,6 @@
       window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
         banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.15}px)`;
-        image.style.transform = `translateY(${(currentScroll - lastScrollY) * 0.05}px)`;
       });
 
       document.getElementById('closeBanner').addEventListener('click', () => {

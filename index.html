@@ -16,6 +16,21 @@
       position: relative;
     }
 
+    .floating-banner {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 0, 0.9);
+      color: #000;
+      padding: 12px 16px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      border-radius: 8px 0 0 8px;
+      z-index: 1000;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.4);
+    }
+
     .nav-bar {
       position: fixed;
       top: 0;
@@ -183,6 +198,8 @@
 </head>
 <body>
 
+  <div class="floating-banner">📢 에그타르트 정규 내전 신청 중!</div>
+
   <header class="nav-bar">
     <div class="nav-container">
       <a href="https://kinnn0602.github.io/EggTart/" class="logo-text">🥚 에그타르트</a>
@@ -236,7 +253,6 @@
 
       <footer>
         <p>© 2025 발로란트 커뮤니티 서버</p>
-        
       </footer>
     </div>
   </div>
@@ -250,8 +266,3 @@
 
 </body>
 </html>
-
-
-</body>
-</html>
-

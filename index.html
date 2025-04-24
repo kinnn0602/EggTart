@@ -49,16 +49,19 @@
     }
 
     .dropdown {
-      display: none;
       position: absolute;
-      top: 40px;
+      top: 100%;
       left: 0;
       background-color: #222;
       border-radius: 8px;
-      padding: 10px 0;
+      padding: 0;
       list-style: none;
       z-index: 1000;
       min-width: 160px;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
     }
 
     .dropdown li {
@@ -70,8 +73,12 @@
       color: #ff4f4f;
     }
 
-    .nav-menu li:hover .dropdown {
-      display: block;
+    .nav-menu > li:hover > .dropdown,
+    .nav-menu > li:focus-within > .dropdown {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      padding: 10px 0;
     }
 
     .wave-bg {
@@ -158,28 +165,28 @@
   <header class="nav-bar">
     <nav>
       <ul class="nav-menu">
-        <li>
+        <li tabindex="0">
           주요사항
           <ul class="dropdown">
             <li><a href="notice.html">📢 공지사항</a></li>
             <li><a href="rules.html">📜 서버 규칙</a></li>
           </ul>
         </li>
-        <li>
+        <li tabindex="0">
           서버
           <ul class="dropdown">
             <li><a href="about.html">🔍 서버 소개</a></li>
             <li><a href="staff.html">👥 운영진</a></li>
           </ul>
         </li>
-        <li>
+        <li tabindex="0">
           이벤트
           <ul class="dropdown">
             <li><a href="apply.html">📝 정규 내전 신청</a></li>
             <li><a href="event.html">📅 일정</a></li>
           </ul>
         </li>
-        <li>
+        <li tabindex="0">
           소식
           <ul class="dropdown">
             <li><a href="contact.html">💬 문의</a></li>
@@ -216,6 +223,9 @@
     <p>오너 이메일: <a href="mailto:yunseokim0602@naver.com">yunseokim0602@naver.com</a></p>
     <p>홈페이지 제작자: KIMI</p>
   </div>
+
+</body>
+</html>
 
 </body>
 </html>

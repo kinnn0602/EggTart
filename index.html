@@ -330,21 +330,37 @@
 <!-- 오른쪽: 두 개의 카드 -->
 <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 20px;">
   
-  <!-- 디스코드 참여 카드 (전체 감싸기) -->
-  <a href="https://discord.gg/yourserver" target="_blank" style="text-decoration: none;">
-    <div style="background-color: rgba(255, 255, 255, 0.1); padding: 16px; border-radius: 12px; text-align: center; color: white; transition: background 0.3s;">
-      <h3 style="margin-top: 0;">🤝 디스코드 참여</h3>
-      <p style="color: #fef08a; font-weight: bold;">참여하기 ➜</p>
-    </div>
-  </a>
+  <!-- 디스코드 참여 카드 (디스코드 색상 강조) -->
+<a href="https://discord.gg/yourserver" target="_blank" style="text-decoration: none;">
+  <div style="
+    background: linear-gradient(145deg, rgba(114,137,218,0.15), rgba(88,101,242,0.15));
+    padding: 16px; 
+    border-radius: 12px; 
+    text-align: center; 
+    color: white; 
+    transition: background 0.3s;
+    box-shadow: 0 0 10px rgba(114,137,218,0.2);
+  ">
+    <h3 style="margin-top: 0;">🤝 디스코드 참여</h3>
+    <p style="color: #fef08a; font-weight: bold;">참여하기 ➜</p>
+  </div>
+</a>
 
-  <!-- 문의 카드 (전체 감싸기) -->
-  <a href="contact.html" style="text-decoration: none;">
-    <div style="background-color: rgba(255, 255, 255, 0.1); padding: 16px; border-radius: 12px; text-align: center; color: white; transition: background 0.3s;">
-      <h3 style="margin-top: 0;">💬 문의하기</h3>
-      <p style="color: #fef08a; font-weight: bold;">문의 페이지로 ➜</p>
-    </div>
-  </a>
+<!-- 문의 카드 (발로란트 느낌 붉은빛 강조) -->
+<a href="contact.html" style="text-decoration: none;">
+  <div style="
+    background: linear-gradient(145deg, rgba(255, 79, 79, 0.12), rgba(255, 0, 0, 0.15));
+    padding: 16px; 
+    border-radius: 12px; 
+    text-align: center; 
+    color: white; 
+    transition: background 0.3s;
+    box-shadow: 0 0 10px rgba(255, 79, 79, 0.2);
+  ">
+    <h3 style="margin-top: 0;">💬 문의하기</h3>
+    <p style="color: #fef08a; font-weight: bold;">문의 페이지로 ➜</p>
+  </div>
+</a>
 
 </div>
   

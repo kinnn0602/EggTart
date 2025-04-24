@@ -172,10 +172,10 @@
 
     @keyframes waveMove {
       0%, 100% {
-        d: path(\"M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z\");
+        d: path("M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z");
       }
       50% {
-        d: path(\"M0,100 C300,0 900,200 1200,100 L1200,00 L0,0 Z\");
+        d: path("M0,100 C300,0 900,200 1200,100 L1200,00 L0,0 Z");
       }
     }
 
@@ -217,10 +217,30 @@
     .legal-bar a:hover {
       text-decoration: underline;
     }
-  </style>
+  
+
+    /* 광고 배너 호버 효과 */
+    .floating-banner:hover {
+      transform: translateY(-50%) scale(1.05) rotateZ(-1deg);
+      box-shadow: 0 0 12px #facc15, 0 0 25px rgba(255,255,255,0.25);
+    }
+
+    .floating-banner:hover img {
+      transform: translateY(-3px) scale(1.05);
+      transition: transform 0.3s ease;
+    }
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const banner = document.querySelector('.floating-banner');
+      const image = banner.querySelector('img');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.15}px)`;
+        image.style.transform = `translateY(${(currentScroll - lastScrollY) * 0.05}px)`;
+      });
+
       document.getElementById('closeBanner').addEventListener('click', () => {
         banner.classList.add('hidden');
       });

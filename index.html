@@ -177,7 +177,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -10px);
+    transform: translateX(-50%);
     background-color: #222;
     border-radius: 8px;
     padding: 0;
@@ -187,10 +187,14 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
   .dropdown li {
-    padding: 8px 20px;
+    padding: 10px 20px;
     white-space: nowrap;
+  }
+  .dropdown li a {
+    color: #ffffff;
   }
   .dropdown li a:hover {
     color: #ff4f4f;
@@ -198,7 +202,7 @@
   .nav-menu > li:hover > .dropdown,
   .nav-menu > li:focus-within > .dropdown {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) translateY(0);
     pointer-events: auto;
     padding: 10px 0;
   }
@@ -244,10 +248,23 @@
   </header>
 
   <div class="wave-bg">
-    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
-      <path d="M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z"></path>
-    </svg>
-  </div>
+  <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z" style="animation: waveMove 6s ease-in-out infinite; fill: rgba(255, 79, 79, 0.2);"></path>
+  </svg>
+</div>
+<style>
+  @keyframes waveMove {
+    0% {
+      d: path("M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z");
+    }
+    50% {
+      d: path("M0,100 C300,0 900,200 1200,100 L1200,00 L0,0 Z");
+    }
+    100% {
+      d: path("M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z");
+    }
+  }
+</style>
 
   <div class="overlay">
     <div class="container">

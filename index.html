@@ -336,4 +336,79 @@
     </a>
   </div>
 </body>
+  <body><!-- 달력 섹션 -->
+<section id="calendar" style="max-width: 900px; margin: 80px auto; padding: 30px; background: rgba(0,0,0,0.6); border-radius: 16px; color: white; box-shadow: 0 0 12px rgba(255,255,255,0.15);">
+  <h2 id="calendar-title" style="color: #fef08a; font-size: 1.8rem; margin-bottom: 20px;">📅 이벤트 일정</h2>
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: rgba(255,255,255,0.1);">
+        <th style="padding: 10px;">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+      </tr>
+    </thead>
+    <tbody id="calendar-body"></tbody>
+  </table>
+</section>
+
+<script>
+  // 이벤트 날짜를 설정할 수 있음 (key: YYYY-MM-DD, value: 설명)
+  const events = {
+    "2025-04-05": "정기 내전",
+    "2025-04-13": "이벤트 매치",
+    "2025-04-22": "랭크전"
+  };
+
+  function generateCalendar() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth(); // 0-indexed
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    // 제목 설정
+    const title = `${year}년 ${month + 1}월 이벤트 일정`;
+    document.getElementById("calendar-title").innerText = `📅 ${title}`;
+
+    const tbody = document.getElementById("calendar-body");
+    tbody.innerHTML = "";
+
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+      const row = document.createElement("tr");
+      for (let j = 0; j < 7; j++) {
+        const cell = document.createElement("td");
+        cell.style.padding = "10px";
+        cell.style.textAlign = "center";
+
+        if (i === 0 && j < firstDay) {
+          cell.innerHTML = "";
+        } else if (date > lastDate) {
+          break;
+        } else {
+          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(date).padStart(2, "0")}`;
+          cell.innerHTML = `<strong>${date}</strong>`;
+
+          // 오늘 날짜 강조
+          const today = new Date();
+          if (date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            cell.style.backgroundColor = "rgba(255,255,255,0.1)";
+            cell.style.border = "1px solid #fef08a";
+          }
+
+          // 이벤트 표시
+          if (events[dateStr]) {
+            cell.innerHTML += `<br><small style="color:#ff4f4f">${events[dateStr]}</small>`;
+            cell.style.backgroundColor = "rgba(255, 79, 79, 0.2)";
+            cell.style.borderRadius = "8px";
+          }
+
+          date++;
+        }
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", generateCalendar);
+</script></body>
 </html>

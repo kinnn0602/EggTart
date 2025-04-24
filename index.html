@@ -464,6 +464,26 @@
 
   window.addEventListener("DOMContentLoaded", () => generateCalendar(currentDate));
 </script>
+        
+        <!-- 이미지 캐러셀 슬라이더 -->
+<div class="image-slider" style="flex: 1; min-width: 300px; overflow: hidden; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+  <div class="slides" style="display: flex; transition: transform 1s ease; width: 300%;">
+    <img src="https://source.unsplash.com/400x250/?game" style="width: 100%; object-fit: cover;">
+    <img src="https://source.unsplash.com/400x250/?valorant" style="width: 100%; object-fit: cover;">
+    <img src="https://source.unsplash.com/400x250/?esports" style="width: 100%; object-fit: cover;">
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }, 3000);
+</script>
 
       <footer>
         <p>© 2025 발로란트 커뮤니티 서버</p>

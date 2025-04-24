@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>발로란트 디스코드 서버
-  </title>
-  
+  <title>발로란트 디스코드 서버</title>
   <style>
     /* 전체 페이지의 기본 설정과 배경 이미지 지정 */
     html, body {
@@ -252,6 +250,7 @@
       window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
         banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.15}px)`;
+        image.style.transform = `translateY(${(currentScroll - lastScrollY) * 0.05}px)`;
       });
 
       document.getElementById('closeBanner').addEventListener('click', () => {
@@ -311,114 +310,6 @@
   <!-- 메인 컨텐츠 오버레이 -->
   <div class="overlay">
     <div class="container">
-      <div class="calendar-flex-wrapper" style="display: flex; gap: 40px; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 60px auto;">
-        <div class="card-group-layout">
-          
- 
-  <!-- 📅 달력 -->
-  <section id="calendar" style="flex: 1 1 60%; padding: 30px; background: rgba(0,0,0,0.6); border-radius: 16px; color: white; box-shadow: 0 0 12px rgba(255,255,255,0.15); min-width: 360px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <button onclick="changeMonth(-1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">‹</button>
-      <h2 id="calendar-title" style="color: #fef08a; font-size: 1.8rem;">📅 이벤트 일정</h2>
-      <button onclick="changeMonth(1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">›</button>
-    </div>
-    <table style="width: 100%; border-collapse: collapse;">
-      <thead>
-        <tr style="background-color: rgba(255, 255, 255, 0.15); color: #fef08a;">
-          <th style="padding: 10px;">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
-        </tr>
-      </thead>
-      <tbody id="calendar-body"></tbody>
-    </table>
-  </section>
-
-<!-- 👇 기존 달력 script는 그대로 유지 -->
-<script>
-  const events = {
-    "2025-04-05": "",
-    "2025-04-13": "",
-    "2025-04-25": "내전"
-  };
-
-  let currentDate = new Date();
-
-  function generateCalendar(date) {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const firstDay = new Date(year, month, 1).getDay();
-    const lastDate = new Date(year, month + 1, 0).getDate();
-
-    const title = `${year}년 ${month + 1}월 이벤트 일정`;
-    document.getElementById("calendar-title").innerText = `📅 ${title}`;
-
-    const tbody = document.getElementById("calendar-body");
-    tbody.innerHTML = "";
-
-    let day = 1;
-    for (let i = 0; i < 6; i++) {
-      const row = document.createElement("tr");
-      for (let j = 0; j < 7; j++) {
-        const cell = document.createElement("td");
-        if (i === 0 && j < firstDay) {
-          cell.innerHTML = "";
-        } else if (day > lastDate) {
-          break;
-        } else {
-          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-          cell.innerHTML = `<strong>${day}</strong>`;
-
-          const today = new Date();
-          if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-            cell.classList.add("today");
-          }
-
-          if (events[dateStr]) {
-            cell.classList.add("event");
-            cell.innerHTML += `<br><small>${events[dateStr]}</small>`;
-          }
-
-          day++;
-        }
-        row.appendChild(cell);
-      }
-      tbody.appendChild(row);
-    }
-  }
-
-  function changeMonth(delta) {
-    currentDate.setMonth(currentDate.getMonth() + delta);
-    generateCalendar(currentDate);
-  }
-
-  window.addEventListener("DOMContentLoaded", () => generateCalendar(currentDate));
-</script>
-       <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 40px;">
-
-  <!-- 디스코드 카드 -->
-  <div style="background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-align: left;">
-    <h3 style="color: #fef08a;">🔗 디스코드 참여</h3>
-    <p>에그타르트 서버에 참여하고 다양한 내전에 함께하세요!</p>
-    <a href="https://discord.gg/yourserver" target="_blank" style="display: inline-block; margin-top: 10px; background-color: #5865F2; color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">디스코드 바로가기</a>
-  </div>
-
-  <!-- 최근 공지 카드 -->
-  <div style="background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-align: left;">
-    <h3 style="color: #fef08a;">📢 최근 공지</h3>
-    <ul style="padding-left: 18px;">
-      <li><strong>[업데이트]</strong> 내전 룰 변경 (2025.04.20)</li>
-      <li><strong>[모집]</strong> 신규 운영진 모집 (2025.04.15)</li>
-    </ul>
-    <a href="notice.html" style="color: #ff4f4f;">📋 전체 보기</a>
-  </div>
-
-  <!-- 사진방 카드 -->
-  <div style="background-color: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-align: left;">
-    <h3 style="color: #fef08a;">🖼️ 지난 이벤트</h3>
-    <p>🔥 지난 내전의 하이라이트 장면을 확인하세요!</p>
-    <a href="gallery.html" style="display: inline-block; margin-top: 10px; background-color: rgba(255, 255, 255, 0.1); color: #ffffff; padding: 8px 14px; border-radius: 8px; text-decoration: none;">📷 사진방 가기</a>
-  </div>
-
-</div>
       <h1>🎮 발로란트 디스코드 서버</h1>
       <p>환영합니다! 다양한 정보는 상단 메뉴를 통해 확인하세요 👆</p>
 
@@ -437,7 +328,7 @@
 
   <!-- 광고 배너 (내전 신청 안내) -->
   <div class="floating-banner">
-    <button id="closeBanner">.</button>
+    <button id="closeBanner">✕</button>
     <a href="apply.html" style="text-decoration: none; color: inherit;">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
         <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg" alt="내전 홍보">

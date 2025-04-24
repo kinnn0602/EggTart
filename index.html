@@ -341,9 +341,9 @@
       <!-- 자동 생성 달력 섹션 -->
 <section id="calendar" style="max-width: 900px; margin: 80px auto; padding: 30px; background: rgba(0,0,0,0.6); border-radius: 16px; color: white; box-shadow: 0 0 12px rgba(255,255,255,0.15);">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-    <button onclick="changeMonth(-1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">◀️</button>
+    <button onclick="changeMonth(-1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">❮</button>
     <h2 id="calendar-title" style="color: #fef08a; font-size: 1.8rem;">📅 이벤트 일정</h2>
-    <button onclick="changeMonth(1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">▶️</button>
+    <button onclick="changeMonth(1)" style="font-size: 1.5rem; background: none; border: none; color: #fef08a; cursor: pointer;">❯</button>
   </div>
   <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -389,9 +389,9 @@
 
 <script>
   const events = {
-    "2025-04-05": "정기 내전",
-    "2025-04-13": "이벤트 매치",
-    "2025-04-22": "랭크전"
+    "2025-04-05": "",
+    "2025-04-13": "",
+    "2025-04-25": "내전"
   };
 
   let currentDate = new Date();

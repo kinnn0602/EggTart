@@ -326,8 +326,11 @@
     text-align: left;
     color: white;
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
-    transition: background 0.3s;
-  ">
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+  " 
+  onmouseover="this.style.transform='scale(1.03)'; this.style.background='rgba(255,255,255,0.3)'"
+  onmouseout="this.style.transform='scale(1)'; this.style.background='linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.2))'">
     <h2 style="margin-top: 0;">📢 최근 공지</h2>
     <ul style="padding-left: 20px;">
       <li>🎯 4월 25일 내전 일정 공지</li>

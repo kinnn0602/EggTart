@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>발로란트 디스코드 서버</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -13,7 +13,6 @@
       text-align: center;
       background: url('https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2020/7/20/m4um0guixlhxrzazslrg/v') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
     }
 
     .floating-banner {
@@ -32,16 +31,23 @@
       height: 160px;
       display: flex;
       align-items: center;
-      animation: floatBanner 2s ease-in-out infinite alternate;
+      justify-content: center;
+      transition: top 0.3s ease;
     }
 
-    @keyframes floatBanner {
-      from {
-        transform: translateY(-48%);
-      }
-      to {
-        transform: translateY(-52%);
-      }
+    .floating-banner button {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .floating-banner.hidden {
+      display: none;
     }
 
     .nav-bar {
@@ -208,10 +214,28 @@
       text-decoration: underline;
     }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const banner = document.querySelector('.floating-banner');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.2}px)`;
+      });
+
+      document.getElementById('closeBanner').addEventListener('click', () => {
+        banner.classList.add('hidden');
+      });
+    });
+  </script>
 </head>
 <body>
 
-  <div class="floating-banner">📢 에그타르트 정규 내전 신청 중!</div>
+  <div class="floating-banner">
+    <button id="closeBanner">✕</button>
+    📢 에그타르트 정규 내전 신청 중!
+  </div>
 
   <header class="nav-bar">
     <div class="nav-container">
@@ -252,7 +276,6 @@
     </div>
   </header>
 
-  <!-- 파동 배경 -->
   <div class="wave-bg">
     <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
       <path d="M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z"></path>
@@ -270,7 +293,6 @@
     </div>
   </div>
 
-  <!-- 푸터 정보 바 -->
   <div class="legal-bar">
     <p>에그타르트 공식 홈페이지입니다.</p>
     <p>오너 이메일: <a href="mailto:yunseokim0602@naver.com">yunseokim0602@naver.com</a></p>
@@ -279,4 +301,3 @@
 
 </body>
 </html>
-

@@ -188,6 +188,7 @@
       justify-content: center;
       transition: transform 0.4s ease;
       cursor: pointer;
+      width: 140px;
     }
 
     .floating-banner:hover {
@@ -197,6 +198,7 @@
 
     .floating-banner img {
       width: 100%;
+      height: auto;
       border-radius: 6px;
       box-shadow: 0 0 8px rgba(0,0,0,0.5);
       transition: transform 0.3s;
@@ -207,7 +209,7 @@
     }
 
     .floating-banner span {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       line-height: 1.3;
       font-weight: bold;
       margin-top: 6px;
@@ -230,92 +232,3 @@
       display: none;
     }
   </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const banner = document.querySelector('.floating-banner');
-      const image = banner.querySelector('img');
-      let lastScrollY = window.scrollY;
-
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        banner.style.top = `calc(50% + ${(currentScroll - lastScrollY) * 0.15}px)`;
-        lastScrollY = currentScroll;
-      });
-
-      document.getElementById('closeBanner').addEventListener('click', () => {
-        banner.classList.add('hidden');
-      });
-    });
-  </script>
-</head>
-<body>
-  <header class="nav-bar">
-    <div class="nav-container">
-      <a href="https://kinnn0602.github.io/EggTart/" class="logo-text">🥚 에그타르트</a>
-      <nav>
-        <ul class="nav-menu">
-          <li tabindex="0">
-            주요사항 ▼
-            <ul class="dropdown">
-              <li><a href="notice.html">📢 공지사항</a></li>
-              <li><a href="rules.html">📜 서버 규칙</a></li>
-            </ul>
-          </li>
-          <li tabindex="0">
-            서버 ▼
-            <ul class="dropdown">
-              <li><a href="about.html">🔍 서버 소개</a></li>
-              <li><a href="staff.html">👥 운영진</a></li>
-            </ul>
-          </li>
-          <li tabindex="0">
-            이벤트 ▼
-            <ul class="dropdown">
-              <li><a href="apply.html">📝 정규 내전 신청</a></li>
-              <li><a href="event.html">📅 일정</a></li>
-            </ul>
-          </li>
-          <li tabindex="0">
-            소식 ▼
-            <ul class="dropdown">
-              <li><a href="contact.html">💬 문의</a></li>
-              <li><a href="gallery.html">🖼️ 사진방</a></li>
-            </ul>
-          </li>
-          <li><a href="https://discord.gg/yourserver" target="_blank">디스코드 ➜</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <div class="wave-bg">
-    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
-      <path d="M0,100 C300,200 900,0 1200,100 L1200,00 L0,0 Z"></path>
-    </svg>
-  </div>
-
-  <div class="overlay">
-    <div class="container">
-      <h1>🎮 발로란트 디스코드 서버</h1>
-      <p>환영합니다! 다양한 정보는 상단 메뉴를 통해 확인하세요 👆</p>
-      <footer>
-        <p>© 2025 발로란트 커뮤니티 서버</p>
-      </footer>
-    </div>
-  </div>
-
-  <div class="legal-bar">
-    <p>에그타르트 공식 홈페이지입니다.</p>
-    <p>오너 이메일: <a href="mailto:yunseokim0602@naver.com">yunseokim0602@naver.com</a></p>
-    <p>홈페이지 제작자: KIMI</p>
-  </div>
-
-  <div class="floating-banner">
-    <button id="closeBanner">✕</button>
-    <a href="apply.html" style="text-decoration: none; color: inherit;">
-      <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg" alt="내전 홍보">
-      <span>정규 내전<br>신청 바로가기</span>
-    </a>
-  </div>
-</body>
-</html>

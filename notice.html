@@ -330,7 +330,7 @@
     <p>홈페이지 제작자: KIMI</p>
   </div>
 
-    <!-- 오른쪽 고정 배너 (강화된 효과 포함) -->
+    <!-- 오른쪽 고정 배너 (부드럽게 따라오기 + 화려한 hover 효과 포함) -->
 <div id="right-banner" style="
   position: fixed;
   top: 50%;
@@ -384,6 +384,22 @@
     transition: opacity 0.4s ease;
   }
 </style>
+
+<script>
+  const banner = document.getElementById('right-banner');
+  let lastScrollY = window.scrollY;
+  let currentOffset = 0;
+
+  function animate() {
+    const target = window.scrollY;
+    currentOffset += (target - currentOffset) * 0.1; // 쫀쫀하게 부드럽게 따라옴 (0.1 = 속도 조절)
+    banner.style.top = `calc(50% + ${currentOffset - lastScrollY}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
 
 
 </body>

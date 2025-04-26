@@ -329,64 +329,77 @@
     <p>홈페이지 제작자: KIMI</p>
   </div>
 
-    <!-- 오른쪽 고정 배너 (부드럽게 따라오기 + 화려한 hover 효과 포함) -->
-<div id="right-banner" style="
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 240px;
-  background: rgba(60, 60, 60, 0.92);
-  border-radius: 14px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  z-index: 1000;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s ease;
-">
-  <button onclick="document.getElementById('right-banner').classList.add('hidden')" style="
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-  ">✕</button>
-
-  <a href="apply.html" style="text-decoration: none; color: white;">
-    <div style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
-      <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg"
-           alt="내전 신청"
-           style="width: 100%; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.4); margin-bottom: 12px; transition: transform 0.4s ease;">
-      <span style="font-weight: bold; font-size: 1.05rem; color: #fef08a;">🔥 내전 신청하러 가기 ➜</span>
+    <!-- 오른쪽 광고 배너 (내전 신청 안내) -->
+<div class="floating-banner" id="floatingBanner">
+  <button id="closeBanner" style="position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 1.2rem; color: white; cursor: pointer;">✕</button>
+  <a href="apply.html" id="bannerLink" style="text-decoration: none; color: inherit;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg" alt="내전 홍보" style="width: 100px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.5); transition: transform 0.3s;">
+      <span style="margin-top: 6px; font-weight: bold;">정규 내전<br>신청하러 가기 ➜</span>
     </div>
   </a>
 </div>
 
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const banner = document.querySelector('.floating-banner');
-  let targetY = window.innerHeight / 2; // 화면 세로 중앙
-  let currentY = targetY;
-
-  function animate() {
-    currentY += (window.scrollY + window.innerHeight/2 - currentY) * 0.1; 
-    banner.style.top = `${currentY}px`;
-    requestAnimationFrame(animate);
+<style>
+  .floating-banner {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(60, 60, 60, 0.9);
+    padding: 16px 14px;
+    border-radius: 12px;
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
   }
 
-  animate();
+  .floating-banner.hidden {
+    display: none;
+  }
 
-  document.getElementById('closeBanner').addEventListener('click', () => {
-    banner.classList.add('hidden');
+  .floating-banner:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 0 12px #fef08a, 0 0 20px rgba(255,255,255,0.2);
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('floatingBanner');
+    const closeBtn = document.getElementById('closeBanner');
+    const bannerLink = document.getElementById('bannerLink');
+
+    let targetY = window.innerHeight / 2;
+    let currentY = targetY;
+
+    function animateBanner() {
+      currentY += (window.scrollY + window.innerHeight / 2 - currentY) * 0.1;
+      banner.style.top = `${currentY}px`;
+      requestAnimationFrame(animateBanner);
+    }
+
+    animateBanner();
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // 버튼 누르면 링크 안타게
+      banner.classList.add('hidden');
+    });
+
+    bannerLink.addEventListener('click', (e) => {
+      e.preventDefault(); // 잠깐 이동 막고
+      banner.style.transition = 'all 0.3s ease';
+      banner.style.transform = 'scale(1.2)';
+      banner.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = bannerLink.href;
+      }, 300); // 터진 후 이동
+    });
   });
-});
-</script>
-
 
 </body>
 </html>

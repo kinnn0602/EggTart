@@ -624,6 +624,50 @@
     <p>오너 이메일: <a href="mailto:yunseokim0602@naver.com">yunseokim0602@naver.com</a></p>
     <p>홈페이지 제작자: KIMI</p>
   </div>
+
+    <!-- 우측 고정 배너 -->
+<div id="right-banner" style="
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 220px;
+  background: rgba(60, 60, 60, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  z-index: 1000;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+">
+  <button onclick="document.getElementById('right-banner').style.display='none'" style="
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1001;
+  ">✕</button>
+
+  <a href="apply.html" style="text-decoration: none; color: white;">
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
+      <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg"
+           alt="내전 신청"
+           style="width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.4); margin-bottom: 10px;">
+      <span style="font-weight: bold; font-size: 1rem; color: #fef08a;">📝 내전 신청하러 가기</span>
+    </div>
+  </a>
+</div>
+
+<!-- hover 효과를 위한 스타일 -->
+<style>
+  #right-banner:hover {
+    transform: translateY(-50%) scale(1.03);
+    box-shadow: 0 0 14px #facc15, 0 0 24px rgba(255,255,255,0.25);
+  }
+</style>
     
 </body>
 </html>

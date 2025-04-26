@@ -367,36 +367,24 @@
   </a>
 </div>
 
-<style>
-  #right-banner:hover {
-    transform: translateY(-50%) scale(1.05) rotateZ(-0.4deg);
-    box-shadow: 0 0 16px #facc15, 0 0 28px rgba(255,255,255,0.25);
-  }
-
-  #right-banner:hover img {
-    transform: translateY(-3px) scale(1.02);
-  }
-
-  #right-banner.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-</style>
-
 <script>
-  const banner = document.getElementById('right-banner');
-  let lastScrollY = window.scrollY;
-  let currentOffset = 0;
+window.addEventListener('DOMContentLoaded', () => {
+  const banner = document.querySelector('.floating-banner');
+  let targetY = window.innerHeight / 2; // 화면 세로 중앙
+  let currentY = targetY;
 
   function animate() {
-    const target = window.scrollY;
-    currentOffset += (target - currentOffset) * 0.1; // 쫀쫀하게 부드럽게 따라옴 (0.1 = 속도 조절)
-    banner.style.top = `calc(50% + ${currentOffset - lastScrollY}px)`;
+    currentY += (window.scrollY + window.innerHeight/2 - currentY) * 0.1; 
+    banner.style.top = `${currentY}px`;
     requestAnimationFrame(animate);
   }
 
   animate();
+
+  document.getElementById('closeBanner').addEventListener('click', () => {
+    banner.classList.add('hidden');
+  });
+});
 </script>
 
 

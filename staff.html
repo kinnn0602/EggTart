@@ -429,6 +429,62 @@
     <p>홈페이지 제작자: KIMI</p>
   </div>
 
+    <!-- 오른쪽 고정 배너 (강화된 효과 포함) -->
+<div id="right-banner" style="
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 240px;
+  background: rgba(60, 60, 60, 0.92);
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  z-index: 1000;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+">
+  <button onclick="document.getElementById('right-banner').classList.add('hidden')" style="
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  ">✕</button>
+
+  <a href="apply.html" style="text-decoration: none; color: white;">
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
+      <img src="https://i.ytimg.com/vi/pJx4-clUEqY/maxresdefault.jpg"
+           alt="내전 신청"
+           style="width: 100%; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.4); margin-bottom: 12px; transition: transform 0.4s ease;">
+      <span style="font-weight: bold; font-size: 1.05rem; color: #fef08a;">🔥 내전 신청하러 가기 ➜</span>
+    </div>
+  </a>
+</div>
+
+<style>
+  #right-banner:hover {
+    transform: translateY(-50%) scale(1.05) rotateZ(-0.4deg);
+    box-shadow: 0 0 16px #facc15, 0 0 28px rgba(255,255,255,0.25);
+  }
+
+  #right-banner:hover img {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  #right-banner.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+</style>
+
+
 
 </body>
 </html>
